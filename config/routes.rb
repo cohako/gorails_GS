@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
   get "about-us", to: "about#index", as: :about
-  root to: "main#index"
 
+  get "sign_up", to: "registrations#new"
+
+  root to: "main#index"
+  post "sign_up", to: "registrations#create"
 end
