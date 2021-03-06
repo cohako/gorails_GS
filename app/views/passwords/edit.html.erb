@@ -1,0 +1,24 @@
+<h1> Editar senha</h1>
+
+<%= form_with model: Current.user, url: edit_passwords_path do |form|%>
+
+  <% if form.object.errors.any?%>
+    <div class="alert alert-danger">
+      <% form.object.errors.full_messages.each do |messages| %>
+        <div><%= messages %></div>
+      <% end %>
+    </div>
+  <% end %>
+
+  <div class="mb-3">
+    <%= form.password_field :password, placeholder:"Senha", class:"form-control"%>
+  </div>
+
+  <div class="mb-3">
+    <%= form.password_field :password_confirmation, placeholder:"Confirmar senha", class:"form-control" %>
+  </div>
+
+  <div class="mb-3">
+    <%= form.submit "Atualizar senha", class: "btn btn-dark" %>
+  </div>
+<% end %>

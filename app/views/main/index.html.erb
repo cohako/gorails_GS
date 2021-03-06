@@ -1,6 +1,9 @@
 <div class="d-flex align-items-center justify-content-center">
   <h1>Welcome</h1>
 </div>
-  <p><% if @user%>
-   <%= @user.email %>
-    <% end %></p>
+  <% if @user%>
+    Conectado como: <%= @user.email %>
+
+    <%= button_to "DEsconectar", logout_path, method: :delete, class:"btn btn-dark" %>
+
+  <% end %>
