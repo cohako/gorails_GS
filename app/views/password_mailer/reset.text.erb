@@ -1,0 +1,5 @@
+Hi <%= params[:user].email %>,
+
+Alguém pediu para trocar sua senha, se foi você pode acessar esse link valido por 15 minutos
+
+<%= password_reset_edit_url(token: @token) %>
